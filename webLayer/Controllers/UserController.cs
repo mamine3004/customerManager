@@ -28,7 +28,13 @@ namespace webLayer.Controllers
             return userService.addUser(user);
         }
 
+        [HttpGet("/{id}")]
+        public User getUserById(int id)
+        {
+            return userService.findById(id);
+        }
 
-    
+
+
     }
 }
