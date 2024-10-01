@@ -20,7 +20,7 @@ IConfiguration conf = new ConfigurationBuilder()
 
 String sconf = conf.GetConnectionString("Mycon1");
 builder.Services.AddDbContext<UserContext>(opt => opt.UseSqlServer(sconf));
-builder.Services.AddTransient(typeof(IUser), typeof(User) );
+builder.Services.AddTransient(typeof(IUser), typeof(UserServise) );
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -12,6 +12,6 @@ namespace serviceLayer
         int addUser(User user);
         List<User> findAll();
         User findById(int id);
-        User findByName(string name)
+        User findByName(string name);
     }
 }

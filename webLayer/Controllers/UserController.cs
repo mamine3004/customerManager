@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using corelayer;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using serviceLayer;
 
@@ -15,10 +16,19 @@ namespace webLayer.Controllers
             this.userService = userService;
         }
 
-        //[HttpGet(Name = "")]
-        //public IActionResult getAllUser()
-        
-        //    return Ok();
-        //}
+        [HttpGet]
+        public List<User> getAllUser()
+        {
+            return userService.findAll();
+        }
+
+        [HttpPost]
+        public int addUser(User user)
+        {
+            return userService.addUser(user);
+        }
+
+
+    
     }
 }
